@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#17101d">
+  <title>O Enigma do Simbolismo — Desafio literário</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page-shell">
+    <div class="masthead"><span>DESAFIO DAS ESCOLAS LITERÁRIAS</span></div>
+    <header class="hero">
+      <div class="eyebrow">Brasil · fim do século XIX</div>
+      <h1>O Enigma do Simbolismo</h1>
+      <p>Uma disputa de poesia, mistério e imaginação.</p>
+      <div class="ornament" aria-hidden="true">✦</div>
+    </header>
+
+    <section class="intro-card panel" id="intro">
+      <div class="eyebrow">Meninos contra meninas</div>
+      <h2>Que comece o desafio</h2>
+      <p>Girem a roleta, descubram uma pergunta sobre o Simbolismo brasileiro e provem quem conhece melhor essa escola literária.</p>
+      <div class="rules" aria-label="Pontuação por dificuldade">
+        <span class="rule"><b>Fácil</b> · 1 ponto</span>
+        <span class="rule"><b>Médio</b> · 2 pontos</span>
+        <span class="rule"><b>Difícil</b> · 3 pontos</span>
+      </div>
+      <button class="primary-button" id="start-button" type="button">✧ &nbsp; Iniciar o jogo &nbsp; ✧</button>
+    </section>
+
+    <section class="game" id="game" aria-label="Jogo de perguntas sobre o Simbolismo">
+      <div class="scoreboard" aria-label="Placar">
+        <div class="team girls active-turn" id="girls-team">
+          <div class="team-name">✧ Meninas ✧</div>
+          <div class="team-score"><span id="girls-score">0</span><small> / 9</small></div>
+        </div>
+        <div class="vs">CONTRA</div>
+        <div class="team boys" id="boys-team">
+          <div class="team-name">✧ Meninos ✧</div>
+          <div class="team-score"><span id="boys-score">0</span><small> / 9</small></div>
+        </div>
+      </div>
+      <p class="turn-note" id="turn-note" aria-live="polite">A vez é das meninas</p>
+
+      <section class="game-card panel" id="wheel-screen">
+        <h2>A roleta dos enigmas</h2>
+        <p class="game-hint">Deixe a sorte escolher a próxima pergunta.</p>
+        <div class="wheel-wrap" aria-label="Roleta com 18 perguntas">
+          <span class="wheel-pointer" aria-hidden="true"></span>
+          <div class="wheel" id="wheel" aria-hidden="true"></div>
+        </div>
+        <button class="primary-button spin-button" id="spin-button" type="button">⟳ &nbsp; Girar a roleta</button>
+        <div class="legend" aria-label="Níveis de dificuldade">
+          <span>1–6 <b>Fácil · 1 ponto</b></span>
+          <span>7–12 <b>Médio · 2 pontos</b></span>
+          <span>13–18 <b>Difícil · 3 pontos</b></span>
+        </div>
+      </section>
+
+      <section class="question-card panel" id="question-screen" hidden aria-live="polite">
+        <div class="question-meta"><span class="badge" id="question-number"></span><span class="badge" id="question-level"></span><span class="badge" id="question-turn"></span></div>
+        <h2 id="question-text"></h2>
+        <div class="answers" id="answers"></div>
+        <p class="feedback" id="feedback" aria-live="assertive"></p>
+      </section>
+
+      <section class="result-card panel" id="result-screen" hidden>
+        <div class="eyebrow">O enigma foi desvendado</div>
+        <h2 id="winner-title"></h2>
+        <p id="winner-message"></p>
+        <button class="primary-button" id="restart-button" type="button">Jogar novamente</button>
+      </section>
+      <div class="game-footer" id="game-footer">
+        <p>A equipe que chegar primeiro a <strong>9 pontos</strong> vence!</p>
+        <details class="secret-challenges" id="secret-challenges">
+          <summary>✧ Desafios secretos · recompensa especial ✧</summary>
+          <p class="secret-intro">Cada desafio pode ser tentado uma vez. Quem acertar ganha uma guloseima; depois, a vez passa para a outra equipe.</p>
+          <div class="secret-challenge-grid">
+            <article class="secret-card panel">
+              <span class="badge">Nível Mestre</span>
+              <h3>O véu das palavras</h3>
+              <p class="secret-question">Em <em>Antífona</em>, de Cruz e Sousa, a sequência “Formas alvas, brancas, Formas claras” contribui principalmente para:</p>
+              <div class="secret-answers" id="master-answers"></div>
+              <p class="secret-feedback" id="master-feedback" aria-live="polite"></p>
+            </article>
+            <article class="secret-card panel">
+              <span class="badge">Nível Doutorado</span>
+              <h3>A música do mistério</h3>
+              <p class="secret-question">Em “Violões que choram”, de Cruz e Sousa, a repetição de sons em “Vozes veladas, veludosas vozes” produz principalmente qual efeito?</p>
+              <div class="secret-answers" id="doctorate-answers"></div>
+              <p class="secret-feedback" id="doctorate-feedback" aria-live="polite"></p>
+            </article>
+          </div>
+        </details>
+      </div>
+    </section>
+    <p class="site-note">CARRINHO DE CANHãO</p>
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
